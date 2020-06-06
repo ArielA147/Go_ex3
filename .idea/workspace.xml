@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="96861278-03a1-4118-b516-cd66eae3866b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/ex3.go" beforeDir="false" afterPath="$PROJECT_DIR$/ex3.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="C:\Users\User\go\go1.14" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ctuJI5bvSqwi352rmiV720NWvx" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="GO_FMT" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="go build ex3.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="Go_ex3" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/ex3.go" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build ex3.go" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="creating function 4.3-4.5" />
+    <option name="LAST_COMMIT_MESSAGE" value="creating function 4.3-4.5" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="233" y="0" key="#Intentions" timestamp="1591478226357">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="0" key="#Intentions/0.0.1280.680@0.0.1280.680" timestamp="1591478226357" />
+    <state x="341" y="0" width="612" height="680" key="#go_build_ex3.go" timestamp="1591467262793">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="341" y="0" width="612" height="680" key="#go_build_ex3.go/0.0.1280.680@0.0.1280.680" timestamp="1591467262793" />
+    <state x="265" y="0" key="CommitChangelistDialog2" timestamp="1591484992731">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="265" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1591484992731" />
+    <state width="1237" height="132" key="GridCell.Tab.0.bottom" timestamp="1591484979870">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="132" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1591484979870" />
+    <state width="1237" height="132" key="GridCell.Tab.0.center" timestamp="1591484979870">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="132" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1591484979870" />
+    <state width="1237" height="132" key="GridCell.Tab.0.left" timestamp="1591484979870">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="132" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1591484979870" />
+    <state width="1237" height="132" key="GridCell.Tab.0.right" timestamp="1591484979870">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="132" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1591484979870" />
+    <state width="1237" height="285" key="GridCell.Tab.1.bottom" timestamp="1591472356255">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="285" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1591472356255" />
+    <state width="1237" height="285" key="GridCell.Tab.1.center" timestamp="1591472356255">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="285" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1591472356255" />
+    <state width="1237" height="285" key="GridCell.Tab.1.left" timestamp="1591472356255">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="285" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1591472356255" />
+    <state width="1237" height="285" key="GridCell.Tab.1.right" timestamp="1591472356255">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="285" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1591472356255" />
+    <state x="450" y="258" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591485004697">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="450" y="258" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1591485004697" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1591484491705">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1591484491705" />
+  </component>
+</project>
