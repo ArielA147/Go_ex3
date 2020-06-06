@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"unicode/utf8"
+)
 
 // Ex4.3 : Reverse an array using pointer and without slice.
 func reverse(s *[100]int) {
@@ -35,6 +38,18 @@ func unique(slice []string) []string {
 // Ex4.6 : In-place function hat squashes each run of adjacent Unicode spaces in a UTF-8-encoded []byte slice into a single ASCII space.
 
 // Ex4.7 : Reverse the characters of a []byte slice that represents a UTF-8-encoded string, in place.
+func ReverseRune(in []byte) {
+	buf := make([]byte, 0, len(in)) // a slice of length 0 and capacity len(in) that is backed by this underlying array.
+	i := len(in)
+
+	for i > 0 {
+		_, s := utf8.DecodeLastRune(in[:i]) // decoding
+		buf = append(buf, in[i-s:i]...)     // appending the needed word
+		i -= s
+	}
+	copy(in, buf)
+	println(string(in) == "sågrömskäR")
+}
 
 func main() {
 
@@ -50,4 +65,10 @@ func main() {
 	fmt.Println("ths slice before : ", intSlice)
 	uniqueSlice := unique(intSlice)
 	fmt.Println("ths slice after : ", uniqueSlice)
+
+	fmt.Println("Ex4.7")
+	in := "Räksmörgås"
+	want := "sågrömskäR"
+	ReverseRune([]byte(in))
+	println(string(in) == want)
 }
