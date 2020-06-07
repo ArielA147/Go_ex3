@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"unicode"
 	"unicode/utf8"
 )
 
@@ -36,6 +37,24 @@ func unique(slice []string) []string {
 }
 
 // Ex4.6 : In-place function hat squashes each run of adjacent Unicode spaces in a UTF-8-encoded []byte slice into a single ASCII space.
+func squashSpace(bytes []byte) []byte {
+	out := bytes[:0]
+	var last rune
+
+	for i := 0; i < len(bytes); {
+		r, rune_size := utf8.DecodeRune(bytes[i:]) // rune and its size
+
+		// check if the rune is a space character in Unicode
+		if !unicode.IsSpace(r) {
+			out = append(out, bytes[i:i+rune_size]...) // adding the bytes we want which not containing space
+		} else if unicode.IsSpace(r) && !unicode.IsSpace(last) { // if found space but there are non space in the end - add the space
+			out = append(out, ' ')
+		}
+		last = r       // the remaining rune
+		i += rune_size // go to the next rune
+	}
+	return out
+}
 
 // Ex4.7 : Reverse the characters of a []byte slice that represents a UTF-8-encoded string, in place.
 func ReverseRune(in []byte) {
@@ -48,7 +67,6 @@ func ReverseRune(in []byte) {
 		i -= s
 	}
 	copy(in, buf)
-	println(string(in) == "sågrömskäR")
 }
 
 func main() {
@@ -65,10 +83,4 @@ func main() {
 	fmt.Println("ths slice before : ", intSlice)
 	uniqueSlice := unique(intSlice)
 	fmt.Println("ths slice after : ", uniqueSlice)
-
-	fmt.Println("Ex4.7")
-	in := "Räksmörgås"
-	want := "sågrömskäR"
-	ReverseRune([]byte(in))
-	println(string(in) == want)
 }

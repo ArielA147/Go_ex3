@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96861278-03a1-4118-b516-cd66eae3866b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ex3.go" beforeDir="false" afterPath="$PROJECT_DIR$/ex3.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +58,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="creating function 4.3-4.5" />
-    <option name="LAST_COMMIT_MESSAGE" value="creating function 4.3-4.5" />
+    <MESSAGE value="adding ex 4.7" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding ex 4.7" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="0" key="#Intentions" timestamp="1591478226357">
@@ -68,10 +70,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="341" y="0" width="612" height="680" key="#go_build_ex3.go/0.0.1280.680@0.0.1280.680" timestamp="1591467262793" />
-    <state x="265" y="0" key="CommitChangelistDialog2" timestamp="1591484992731">
+    <state x="265" y="0" key="CommitChangelistDialog2" timestamp="1591516828418">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="265" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1591484992731" />
+    <state x="265" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1591516828418" />
     <state width="1237" height="132" key="GridCell.Tab.0.bottom" timestamp="1591484979870">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
