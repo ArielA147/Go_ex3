@@ -57,16 +57,25 @@ func squashSpace(bytes []byte) []byte {
 }
 
 // Ex4.7 : Reverse the characters of a []byte slice that represents a UTF-8-encoded string, in place.
-func ReverseRune(in []byte) {
-	buf := make([]byte, 0, len(in)) // a slice of length 0 and capacity len(in) that is backed by this underlying array.
-	i := len(in)
+func ReverseRune(in []byte) []byte {
 
-	for i > 0 {
-		_, s := utf8.DecodeLastRune(in[:i]) // decoding
-		buf = append(buf, in[i-s:i]...)     // appending the needed word
-		i -= s
+	if utf8.RuneCount(in) == 1 {
+		return in
 	}
-	copy(in, buf)
+	_, s := utf8.DecodeLastRune(in) // decoding
+	return append(ReverseRune(in[s:]),in[:s]...)
+	/*
+		buf := make([]byte, 0, len(in)) // a slice of length 0 and capacity len(in) that is backed by this underlying array.
+		i := len(in)
+
+		for i > 0 {
+			_, s := utf8.DecodeLastRune(in[:i]) // decoding
+			buf = append(buf, in[i-s:i]...)     // appending the needed word
+			i -= s
+		}
+		copy(in, buf)
+
+	*/
 }
 
 func main() {
