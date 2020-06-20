@@ -7,7 +7,7 @@ import (
 )
 
 // Ex4.3 : Reverse an array using pointer and without slice.
-func reverse(s *[100]int) {
+func reverse(s *[60]int) {
 	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
 		s[i], s[j] = s[j], s[i]
 	}
@@ -97,15 +97,15 @@ func main() {
 	fmt.Println("the list after", rounds, "rotaions:", s)
 
 	fmt.Println("Ex4.5")
-	intSlice := []string{"1", "5", "3", "6", "9", "9", "4", "2", "3", "1", "5"}
+	intSlice := []string{"1", "5", "5", "1", "1","1",  "3", "6", "9", "9", "4", "2", "3", "1", "5"}
 	fmt.Println("ths slice before : ", intSlice)
 	uniqueSlice := unique(intSlice)
 	fmt.Println("ths slice after : ", uniqueSlice)
 
 	fmt.Println("Ex4.6")
-	squashSpace_result := string(squashSpace([]byte("R ä k s  m ö r   g å s")))
-	squashSpace_wanted := "sågrömskäR"
-	fmt.Println("the function is :", squashSpace_result,squashSpace_wanted)
+	squashSpace_result := string(squashSpace([]byte("R I c \n k  A n D   M o   R t I \n \n \n y")))
+	squashSpace_wanted := "R I c k A n D M o R t I y"
+	fmt.Println("the function is :", squashSpace_result == squashSpace_wanted)
 
 	fmt.Println("Ex4.7")
 	ReverseRune_result := string(ReverseRune([]byte("Räksmörgås")))
