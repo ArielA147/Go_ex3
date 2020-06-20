@@ -93,28 +93,28 @@ func main() {
 	s2 := [5]int{1, 2, 3, 4, 5}
 	fmt.Println("the list before is : ", s2)
 	reverse(&s2)
-	fmt.Println("the list after is : ", s2)
+	fmt.Println("the list after is : ", s2) // the list after is :  [5 4 3 2 1]
 
 	fmt.Println("Ex4.4")
 	s := []int{1, 2, 3, 4, 5}
 	fmt.Println("the list before is : ", s)
 	rounds := 3
 	rotate(s, rounds)
-	fmt.Println("the list after", rounds, "rotaions:", s)
+	fmt.Println("the list after", rounds, "rotaions:", s) // the list after 3 rotaions: [4 5 1 2 3]
 
 	fmt.Println("Ex4.5")
 	intSlice := []string{"1", "5", "5", "1", "1", "1", "3", "6", "9", "9", "4", "2", "6", "9", "6", "9", "6", "9", "3", "1", "5"}
 	fmt.Println("ths slice before : ", intSlice)
 	uniqueSlice := unique(intSlice)
-	fmt.Println("ths slice after : ", uniqueSlice)
+	fmt.Println("ths slice after : ", uniqueSlice) // ths slice after :  [1 5 3 6 9 4 2]
 
 	fmt.Println("Ex4.6")
 	squashSpace_result := string(squashSpace([]byte("R I c \n k  A n D   M o   R t I \n \n \n y")))
 	squashSpace_wanted := "R I c k A n D M o R t I y"
-	fmt.Println("the function is :", squashSpace_result == squashSpace_wanted)
+	fmt.Println("the function is :", squashSpace_result == squashSpace_wanted) // True
 
 	fmt.Println("Ex4.7")
-	ReverseRune_result := string(ReverseRune([]byte("Räksmörgås")))
-	ReverseRune_wanted := "sågrömskäR"
-	fmt.Println("the function is :", ReverseRune_result == ReverseRune_wanted)
+	ReverseRune_result := string(ReverseRune([]byte("ArielAndYoni")))
+	ReverseRune_wanted := "inoYdnAleirA"
+	fmt.Println("the function is :", ReverseRune_result == ReverseRune_wanted) // True
 }
