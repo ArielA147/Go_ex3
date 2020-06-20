@@ -57,13 +57,22 @@ func squashSpace(bytes []byte) []byte {
 }
 
 // Ex4.7 : Reverse the characters of a []byte slice that represents a UTF-8-encoded string, in place.
-func ReverseRune(in []byte) []byte {
-
-	if utf8.RuneCount(in) == 1 {
-		return in
+func rev(in []byte) {
+	s := len(in)
+	for i := 0; i < len(in)/2; i++ {
+		in[i], in[s-1-i] = in[s-1-i], in[i]
 	}
-	_, s := utf8.DecodeLastRune(in) // decoding
-	return append(ReverseRune(in[s:]),in[:s]...)
+}
+
+func ReverseRune(in []byte) []byte {
+	for i := 0; i < len(in); {
+		_, s := utf8.DecodeRune(in[i:]) // decoding
+		rev(in[i : i+s])
+		i += s
+	}
+	rev(in)
+	return in
+
 	/*
 		buf := make([]byte, 0, len(in)) // a slice of length 0 and capacity len(in) that is backed by this underlying array.
 		i := len(in)
@@ -92,4 +101,14 @@ func main() {
 	fmt.Println("ths slice before : ", intSlice)
 	uniqueSlice := unique(intSlice)
 	fmt.Println("ths slice after : ", uniqueSlice)
+
+	fmt.Println("Ex4.6")
+	squashSpace_result := string(squashSpace([]byte("R ä k s  m ö r   g å s")))
+	squashSpace_wanted := "sågrömskäR"
+	fmt.Println("the function is :", squashSpace_result,squashSpace_wanted)
+
+	fmt.Println("Ex4.7")
+	ReverseRune_result := string(ReverseRune([]byte("Räksmörgås")))
+	ReverseRune_wanted := "sågrömskäR"
+	fmt.Println("the function is :", ReverseRune_result == ReverseRune_wanted)
 }
