@@ -7,7 +7,7 @@ import (
 )
 
 // Ex4.3 : Reverse an array using pointer and without slice.
-func reverse(s *[60]int) {
+func reverse(s *[5]int) {
 	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
 		s[i], s[j] = s[j], s[i]
 	}
@@ -90,6 +90,12 @@ func ReverseRune(in []byte) []byte {
 func main() {
 
 	fmt.Println("Ex4.4")
+	s2 := [5]int{1, 2, 3, 4, 5}
+	fmt.Println("the list before is : ", s2)
+	reverse(&s2)
+	fmt.Println("the list after is : ", s2)
+
+	fmt.Println("Ex4.4")
 	s := []int{1, 2, 3, 4, 5}
 	fmt.Println("the list before is : ", s)
 	rounds := 3
@@ -97,7 +103,7 @@ func main() {
 	fmt.Println("the list after", rounds, "rotaions:", s)
 
 	fmt.Println("Ex4.5")
-	intSlice := []string{"1", "5", "5", "1", "1","1",  "3", "6", "9", "9", "4", "2", "3", "1", "5"}
+	intSlice := []string{"1", "5", "5", "1", "1", "1", "3", "6", "9", "9", "4", "2", "6", "9", "6", "9", "6", "9", "3", "1", "5"}
 	fmt.Println("ths slice before : ", intSlice)
 	uniqueSlice := unique(intSlice)
 	fmt.Println("ths slice after : ", uniqueSlice)
