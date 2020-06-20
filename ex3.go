@@ -7,7 +7,7 @@ import (
 )
 
 // Ex4.3 : Reverse an array using pointer and without slice.
-func reverse(s *[100]int) {
+func reverse(s *[5]int) {
 	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
 		s[i], s[j] = s[j], s[i]
 	}
@@ -57,30 +57,64 @@ func squashSpace(bytes []byte) []byte {
 }
 
 // Ex4.7 : Reverse the characters of a []byte slice that represents a UTF-8-encoded string, in place.
-func ReverseRune(in []byte) {
-	buf := make([]byte, 0, len(in)) // a slice of length 0 and capacity len(in) that is backed by this underlying array.
-	i := len(in)
-
-	for i > 0 {
-		_, s := utf8.DecodeLastRune(in[:i]) // decoding
-		buf = append(buf, in[i-s:i]...)     // appending the needed word
-		i -= s
+func rev(in []byte) {
+	s := len(in)
+	for i := 0; i < len(in)/2; i++ {
+		in[i], in[s-1-i] = in[s-1-i], in[i]
 	}
-	copy(in, buf)
+}
+
+func ReverseRune(in []byte) []byte {
+	for i := 0; i < len(in); {
+		_, s := utf8.DecodeRune(in[i:]) // decoding
+		rev(in[i : i+s])
+		i += s
+	}
+	rev(in)
+	return in
+
+	/*
+		buf := make([]byte, 0, len(in)) // a slice of length 0 and capacity len(in) that is backed by this underlying array.
+		i := len(in)
+
+		for i > 0 {
+			_, s := utf8.DecodeLastRune(in[:i]) // decoding
+			buf = append(buf, in[i-s:i]...)     // appending the needed word
+			i -= s
+		}
+		copy(in, buf)
+
+	*/
 }
 
 func main() {
+
+	fmt.Println("Ex4.4")
+	s2 := [5]int{1, 2, 3, 4, 5}
+	fmt.Println("the list before is : ", s2)
+	reverse(&s2)
+	fmt.Println("the list after is : ", s2) // the list after is :  [5 4 3 2 1]
 
 	fmt.Println("Ex4.4")
 	s := []int{1, 2, 3, 4, 5}
 	fmt.Println("the list before is : ", s)
 	rounds := 3
 	rotate(s, rounds)
-	fmt.Println("the list after", rounds, "rotaions:", s)
+	fmt.Println("the list after", rounds, "rotaions:", s) // the list after 3 rotaions: [4 5 1 2 3]
 
 	fmt.Println("Ex4.5")
-	intSlice := []string{"1", "5", "3", "6", "9", "9", "4", "2", "3", "1", "5"}
+	intSlice := []string{"1", "5", "5", "1", "1", "1", "3", "6", "9", "9", "4", "2", "6", "9", "6", "9", "6", "9", "3", "1", "5"}
 	fmt.Println("ths slice before : ", intSlice)
 	uniqueSlice := unique(intSlice)
-	fmt.Println("ths slice after : ", uniqueSlice)
+	fmt.Println("ths slice after : ", uniqueSlice) // ths slice after :  [1 5 3 6 9 4 2]
+
+	fmt.Println("Ex4.6")
+	squashSpace_result := string(squashSpace([]byte("R I c \n k  A n D   M o   R t I \n \n \n y")))
+	squashSpace_wanted := "R I c k A n D M o R t I y"
+	fmt.Println("the function is :", squashSpace_result == squashSpace_wanted) // True
+
+	fmt.Println("Ex4.7")
+	ReverseRune_result := string(ReverseRune([]byte("ArielAndYoni")))
+	ReverseRune_wanted := "inoYdnAleirA"
+	fmt.Println("the function is :", ReverseRune_result == ReverseRune_wanted) // True
 }
