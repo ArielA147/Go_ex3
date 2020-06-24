@@ -487,19 +487,257 @@ func main() {
 	fmt.Println("Ex5.10")
 	topoSort_result := topoSort(prereqs)
 	printInOrder(topoSort_result)
-	fmt.Println("the function is: ", isValid(topoSort_result))
+	fmt.Println("the function is: ", isValid(topoSort_result)) //Valid topolgical order
 
 	fmt.Println("Ex5.11")
-	printCycleTopologicalSort(cyclePrereqs)
+	printCycleTopologicalSort(cyclePrereqs) /*
+		cycle: a -> b -> a
+		cycle: data structures -> discrete math -> intro to programming -> data structures
+		cycle: calculus -> linear algebra -> calculus
+		1:	b
+		2:	a
+		3:	intro to programming
+		4:	discrete math
+		5:	data structures
+		6:	algorithms
+		7:	linear algebra
+		8:	calculus
+		9:	formal languages
+		10:	computer organization
+		11:	compilers
+		12:	databases
+		13:	operating systems
+		14:	networks
+		15:	programming languages
+	*/
 
 	fmt.Println("Ex5.12")
 	callOutline([]string{"http://gopl.io"})
+	/*
+		<html>
+		  <head>
+		    <meta>
+		    </meta>
+		    <title>
+		    </title>
+		    <script>
+		    </script>
+		    <link>
+		    </link>
+		    <style>
+		    </style>
+		  </head>
+		  <body>
+		    <table>
+		      <tbody>
+		        <tr>
+		          <td>
+		            <a>
+		              <img>
+		              </img>
+		            </a>
+		            <br>
+		            </br>
+		            <div>
+		              <a>
+		                <img>
+		                </img>
+		              </a>
+		              <a>
+		                <img>
+		                </img>
+		              </a>
+		              <a>
+		                <img>
+		                </img>
+		              </a>
+		            </div>
+		            <br>
+		            </br>
+		          </td>
+		          <td>
+		            <h1>
+		            </h1>
+		            <p>
+		              <br>
+		              </br>
+		              <br>
+		              </br>
+		              <br>
+		              </br>
+		              <tt>
+		              </tt>
+		              <tt>
+		              </tt>
+		              <tt>
+		              </tt>
+		            </p>
+		            <div>
+		              <table>
+		                <tbody>
+		                  <tr>
+		                    <td>
+		                      <h1>
+		                        <a>
+		                        </a>
+		                      </h1>
+		                      <h1>
+		                        <a>
+		                        </a>
+		                      </h1>
+		                      <h1>
+		                        <a>
+		                        </a>
+		                      </h1>
+		                      <h1>
+		                      </h1>
+		                      <h1>
+		                      </h1>
+		                      <h1>
+		                      </h1>
+		                      <h1>
+		                      </h1>
+		                      <h1>
+		                      </h1>
+		                    </td>
+		                    <td>
+		                      <h1>
+		                      </h1>
+		                      <h1>
+		                      </h1>
+		                      <h1>
+		                      </h1>
+		                      <h1>
+		                      </h1>
+		                      <h1>
+		                      </h1>
+		                      <h1>
+		                      </h1>
+		                      <h1>
+		                      </h1>
+		                      <h1>
+		                        <a>
+		                        </a>
+		                      </h1>
+		                    </td>
+		                  </tr>
+		                  <tr>
+		                    <td>
+		                      <h1>
+		                        <a>
+		                        </a>
+		                        <a>
+		                        </a>
+		                        <a>
+		                        </a>
+		                        <a>
+		                        </a>
+		                      </h1>
+		                    </td>
+		                  </tr>
+		                </tbody>
+		              </table>
+		            </div>
+		            <p>
+		              <a>
+		                <code>
+		                </code>
+		              </a>
+		              <a>
+		                <code>
+		                </code>
+		              </a>
+		              <a>
+		                <code>
+		                </code>
+		              </a>
+		              <a>
+		                <code>
+		                </code>
+		              </a>
+		            </p>
+		            <p>
+		              <a>
+		              </a>
+		              <a>
+		              </a>
+		            </p>
+		          </td>
+		        </tr>
+		      </tbody>
+		    </table>
+		  </body>
+		</html>
+	*/
 
 	fmt.Println("Ex5.13")
 	callCrawler([]string{"https://golang.org"})
+	/*
+		Some of the output:
 
+		https://golang.org
+		https://support.eji.org/give/153413/#!/donation/checkout
+		https://golang.org/
+		https://golang.org/doc/
+		https://golang.org/pkg/
+		https://golang.org/project/
+		https://golang.org/help/
+		https://golang.org/blog/
+		https://play.golang.org/
+		https://golang.org/dl/
+		https://tour.golang.org/
+		https://blog.golang.org/
+		https://golang.org/doc/copyright.html
+		https://golang.org/doc/tos.html
+		http://www.google.com/intl/en/policies/privacy/
+		http://golang.org/issues/new?title=x/website:
+		https://google.com
+		https://golang.org/doc/install
+		https://golang.org/doc/code.html
+		https://golang.org/cmd/go/
+		https://golang.org/doc/editors.html
+		https://golang.org/doc/effective_go.html
+		https://golang.org/doc/diagnostics.html
+		https://golang.org/doc/faq
+		https://golang.org/wiki
+		golang.org
+		├── blog
+		├── cmd
+		│   └── go
+		├── dl
+		├── doc
+		│   ├── code.html
+		│   ├── copyright.html
+		│   ├── diagnostics.html
+		│   ├── editors.html
+		│   ├── effective_go.html
+		│   ├── faq
+		│   ├── install
+		│   └── tos.html
+		├── help
+		├── issues
+		├── pkg
+		├── project
+		└── wiki
+	*/
+
+	//
 	fmt.Println("Ex5.14")
 	//Fill in path to a directory on your computer below
 	//scanFiles([]string{path})
+	/*
+		input: "C:\\Users\\yonis\\Desktop\\ComputerScience\\Test"
+		output:
+		Test
+		a
+		b
+		c
+		d
+		e
+		f
+		test.txt
+		g
+		anotherTest.txt
+	*/
 
 }

@@ -73,7 +73,8 @@
     <MESSAGE value="creating function 4.3-4.5" />
     <MESSAGE value="adding ex 4.7" />
     <MESSAGE value="adding ex 4.6" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding ex 4.6" />
+    <MESSAGE value="adding ex 5.10-5.14" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding ex 5.10-5.14" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="0" key="#Intentions" timestamp="1591478226357">
@@ -93,38 +94,38 @@
       <screen x="-1920" y="-313" width="1920" height="1040" />
     </state>
     <state x="-1234" y="-128" key="#go_build_findLinks.go/-1920.-313.1920.1040/0.0.1366.728@-1920.-313.1920.1040" timestamp="1593001152894" />
-    <state x="-1522" y="-313" key="CommitChangelistDialog2" timestamp="1593015000328">
+    <state x="-1522" y="-313" key="CommitChangelistDialog2" timestamp="1593015012816">
       <screen x="-1920" y="-313" width="1920" height="1040" />
     </state>
-    <state x="-1522" y="-313" key="CommitChangelistDialog2/-1920.-313.1920.1040/0.0.1366.728@-1920.-313.1920.1040" timestamp="1593015000328" />
+    <state x="-1522" y="-313" key="CommitChangelistDialog2/-1920.-313.1920.1040/0.0.1366.728@-1920.-313.1920.1040" timestamp="1593015012816" />
     <state x="265" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1591516849360" />
     <state x="-1269" y="-139" key="FileChooserDialogImpl" timestamp="1593005374791">
       <screen x="-1920" y="-313" width="1920" height="1040" />
     </state>
     <state x="-1269" y="-139" key="FileChooserDialogImpl/-1920.-313.1920.1040/0.0.1366.728@-1920.-313.1920.1040" timestamp="1593005374791" />
     <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.728/-1920.-313.1920.1040@0.0.1366.728" timestamp="1592682052463" />
-    <state width="1877" height="336" key="GridCell.Tab.0.bottom" timestamp="1593014937969">
+    <state width="1877" height="260" key="GridCell.Tab.0.bottom" timestamp="1593016385231">
       <screen x="-1920" y="-313" width="1920" height="1040" />
     </state>
-    <state width="1877" height="336" key="GridCell.Tab.0.bottom/-1920.-313.1920.1040/0.0.1366.728@-1920.-313.1920.1040" timestamp="1593014937969" />
+    <state width="1877" height="260" key="GridCell.Tab.0.bottom/-1920.-313.1920.1040/0.0.1366.728@-1920.-313.1920.1040" timestamp="1593016385231" />
     <state width="1237" height="168" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592652304394" />
     <state width="1323" height="244" key="GridCell.Tab.0.bottom/0.0.1366.728/-1920.-313.1920.1040@0.0.1366.728" timestamp="1592683645322" />
-    <state width="1877" height="336" key="GridCell.Tab.0.center" timestamp="1593014937969">
+    <state width="1877" height="260" key="GridCell.Tab.0.center" timestamp="1593016385231">
       <screen x="-1920" y="-313" width="1920" height="1040" />
     </state>
-    <state width="1877" height="336" key="GridCell.Tab.0.center/-1920.-313.1920.1040/0.0.1366.728@-1920.-313.1920.1040" timestamp="1593014937969" />
+    <state width="1877" height="260" key="GridCell.Tab.0.center/-1920.-313.1920.1040/0.0.1366.728@-1920.-313.1920.1040" timestamp="1593016385231" />
     <state width="1237" height="168" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1592652304394" />
     <state width="1323" height="244" key="GridCell.Tab.0.center/0.0.1366.728/-1920.-313.1920.1040@0.0.1366.728" timestamp="1592683645322" />
-    <state width="1877" height="336" key="GridCell.Tab.0.left" timestamp="1593014937969">
+    <state width="1877" height="260" key="GridCell.Tab.0.left" timestamp="1593016385231">
       <screen x="-1920" y="-313" width="1920" height="1040" />
     </state>
-    <state width="1877" height="336" key="GridCell.Tab.0.left/-1920.-313.1920.1040/0.0.1366.728@-1920.-313.1920.1040" timestamp="1593014937969" />
+    <state width="1877" height="260" key="GridCell.Tab.0.left/-1920.-313.1920.1040/0.0.1366.728@-1920.-313.1920.1040" timestamp="1593016385231" />
     <state width="1237" height="168" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1592652304394" />
     <state width="1323" height="244" key="GridCell.Tab.0.left/0.0.1366.728/-1920.-313.1920.1040@0.0.1366.728" timestamp="1592683645322" />
-    <state width="1877" height="336" key="GridCell.Tab.0.right" timestamp="1593014937969">
+    <state width="1877" height="260" key="GridCell.Tab.0.right" timestamp="1593016385231">
       <screen x="-1920" y="-313" width="1920" height="1040" />
     </state>
-    <state width="1877" height="336" key="GridCell.Tab.0.right/-1920.-313.1920.1040/0.0.1366.728@-1920.-313.1920.1040" timestamp="1593014937969" />
+    <state width="1877" height="260" key="GridCell.Tab.0.right/-1920.-313.1920.1040/0.0.1366.728@-1920.-313.1920.1040" timestamp="1593016385231" />
     <state width="1237" height="168" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1592652304394" />
     <state width="1323" height="244" key="GridCell.Tab.0.right/0.0.1366.728/-1920.-313.1920.1040@0.0.1366.728" timestamp="1592683645322" />
     <state width="1877" height="374" key="GridCell.Tab.1.bottom" timestamp="1593014690514">
@@ -155,6 +156,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="186" y="9" key="SettingsEditor/0.0.1366.728/-1920.-313.1920.1040@0.0.1366.728" timestamp="1592682210061" />
+    <state x="-1368" y="-57" key="Vcs.Push.Dialog.v2" timestamp="1593015028374">
+      <screen x="-1920" y="-313" width="1920" height="1040" />
+    </state>
+    <state x="-1368" y="-57" key="Vcs.Push.Dialog.v2/-1920.-313.1920.1040/0.0.1366.728@-1920.-313.1920.1040" timestamp="1593015028374" />
     <state x="450" y="258" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591485004697">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -163,16 +168,5 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1591484491705" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/ex3.go</url>
-          <line>357</line>
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
