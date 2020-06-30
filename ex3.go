@@ -514,7 +514,60 @@ func f(x, y float64) float64 {
 	return math.Sin(r) / r
 }
 
-// Ex3.2
+// Ex3.2 - prints an SVG rendering of a saddle.
+type zFunc func(x, y float64) float64
+func saddle(x, y float64) float64 {
+	a := 25.0
+	b := 17.0
+	a2 := a * a
+	b2 := b * b
+	return (y*y/a2 - x*x/b2)
+}
+func cornerSaddle(i, j int) (float64, float64) {
+	// Find point (x,y) at corner of cell (i,j).
+	x := xyrange * (float64(i)/cells - 0.5)
+	y := xyrange * (float64(j)/cells - 0.5)
+
+	// Compute surface height z.
+	z := saddle(x, y)
+
+	// Project (x,y,z) isometrically onto 2-D SVG canvas (sx,sy).
+	sx := width/2 + (x-y)*cos30*xyscale
+	sy := height/2 + (x+y)*sin30*xyscale - z*zscale
+	return sx, sy
+}
+func svg32(f zFunc) {
+	w, err := os.Create("file_32.svg")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	_, _ = fmt.Fprintf(w, "<svg xmlns='http://www.w3.org/2000/svg' "+
+		"style='stroke: grey; fill: white; stroke-width: 0.7' "+
+		"width='%d' height='%d'>", width, height)
+	for i := 0; i < cells; i++ {
+		for j := 0; j < cells; j++ {
+			ax, ay := corner(i+1, j, f)
+			bx, by := corner(i, j, f)
+			cx, cy := corner(i, j+1, f)
+			dx, dy := corner(i+1, j+1, f)
+			if math.IsNaN(ax) || math.IsNaN(ay) || math.IsNaN(bx) || math.IsNaN(by) || math.IsNaN(cx) || math.IsNaN(cy) || math.IsNaN(dx) || math.IsNaN(dy) {
+				continue
+			}
+			_, _ = fmt.Fprintf(w, "<polygon style='stroke: %s; fill: #222222' points='%g,%g %g,%g %g,%g %g,%g'/>\n",
+				"#666666", ax, ay, bx, by, cx, cy, dx, dy)
+		}
+	}
+	_, _ = fmt.Fprintln(w, "</svg>")
+
+	err = w.Close()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+}
+
 // Ex3.3
 func svgColor() {
 	w, err := os.Create("file_33.svg")
@@ -547,7 +600,6 @@ func svgColor() {
 		return
 	}
 }
-
 // minmax returns the min and max values for z given the min/max values of x and y and assuming a square domain.
 func minmax() (min float64, max float64) {
 	min = math.NaN()
@@ -896,4 +948,12 @@ func main() {
 
 	fmt.Println("Ex3.1")
 	svgGreyLayout()
+
+	fmt.Println("Ex3.2")
+	var f zFunc
+	f = saddle
+	svg32(f)
+
+	fmt.Println("Ex3.3")
+	svgColor()
 }
