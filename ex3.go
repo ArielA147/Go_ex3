@@ -949,8 +949,9 @@ func main() {
 		└── wiki
 	*/
 
-	// Fill in path to a directory on your computer below scanFiles([]string{path})
 	fmt.Println("Ex5.14")
+	// Fill in path to a directory on your computer below: scanFiles([]string{path})
+
 	/*
 		input: "C:\\Users\\yonis\\Desktop\\ComputerScience\\Test"
 		output:
