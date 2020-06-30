@@ -13,6 +13,7 @@ import (
 	"strings"
 	"unicode"
 	"unicode/utf8"
+	"math"
 )
 
 // Ex4.3 : Reverse an array using pointer and without slice.
@@ -453,6 +454,70 @@ func getFileName(path string) string {
 	return parts[len(parts)-1]
 }
 
+// Ex3.1
+const (
+	width, height = 600, 320            // canvas size in pixels
+	cells         = 100                 // number of grid cells
+	xyrange       = 30.0                // axis ranges (-xyrange..+xyrange)
+	xyscale       = width / 2 / xyrange // pixels per x or y unit
+	zscale        = height * 0.4        // pixels per z unit
+	angle         = math.Pi / 6         // angle of x, y axes (=30°)
+)
+var sin30, cos30 = math.Sin(angle), math.Cos(angle) // sin(30°), cos(30°)
+func svg() {
+	f, err := os.Create("file_31.svg")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	_, _ = fmt.Fprintln(f, "<svg xmlns='http://www.w3.org/2000/svg' "+
+		"style='stroke: grey; fill: white; stroke-width: 0.7' "+
+		"width='", width, "' height='", height, "' >")
+	for i := 0; i < cells; i++ {
+		for j := 0; j < cells; j++ {
+			ax, ay := corner(i+1, j)
+			bx, by := corner(i, j)
+			cx, cy := corner(i, j+1)
+			dx, dy := corner(i+1, j+1)
+
+			// all the conditions we need to ignore - the params must be init with some value
+			if math.IsNaN(ax) || math.IsNaN(ay) || math.IsNaN(bx) || math.IsNaN(by) || math.IsNaN(cx) || math.IsNaN(cy) || math.IsNaN(dx) || math.IsNaN(dy) {
+				continue
+			}
+			_, _ = fmt.Fprintln(f, "<polygon points='", ax, ",", ay, ",", bx, ",", by, ",", cx, ",", cy, ",", dx, ",", dy, "'/>")
+		}
+	}
+	_, _ = fmt.Fprintln(f, "</svg>")
+
+	err = f.Close()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+}
+func corner(i, j int) (float64, float64) {
+	// Find point (x,y) at corner of cell (i,j).
+	x := xyrange * (float64(i)/cells - 0.5)
+	y := xyrange * (float64(j)/cells - 0.5)
+
+	// Compute surface height z.
+	z := f(x, y)
+
+	// Project (x,y,z) isometrically onto 2-D SVG canvas (sx,sy).
+	sx := width/2 + (x-y)*cos30*xyscale
+	sy := height/2 + (x+y)*sin30*xyscale - z*zscale
+	return sx, sy
+}
+func f(x, y float64) float64 {
+	r := math.Hypot(x, y) // distance from (0,0)
+	return math.Sin(r) / r
+}
+
+// Ex3.2
+// Ex3.3
+// Ex3.4
+
 func main() {
 
 	fmt.Println("Ex4.4")
@@ -740,4 +805,6 @@ func main() {
 		anotherTest.txt
 	*/
 
+	fmt.Println("Ex3.1")
+	svg()
 }
