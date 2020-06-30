@@ -4,6 +4,7 @@ import (
 	"container/list"
 	"fmt"
 	"golang.org/x/net/html"
+	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -514,7 +515,7 @@ func f(x, y float64) float64 {
 	return math.Sin(r) / r
 }
 
-// Ex3.2 - prints an SVG rendering of a saddle.
+// Ex3.2 - prints a SVG rendering of a saddle.
 type zFunc func(x, y float64) float64
 func saddle(x, y float64) float64 {
 	a := 25.0
@@ -523,13 +524,13 @@ func saddle(x, y float64) float64 {
 	b2 := b * b
 	return (y*y/a2 - x*x/b2)
 }
-func cornerSaddle(i, j int) (float64, float64) {
+func cornerSaddle(i, j int , f zFunc) (float64, float64) {
 	// Find point (x,y) at corner of cell (i,j).
 	x := xyrange * (float64(i)/cells - 0.5)
 	y := xyrange * (float64(j)/cells - 0.5)
 
 	// Compute surface height z.
-	z := saddle(x, y)
+	z := f(x, y)
 
 	// Project (x,y,z) isometrically onto 2-D SVG canvas (sx,sy).
 	sx := width/2 + (x-y)*cos30*xyscale
@@ -548,10 +549,10 @@ func svg32(f zFunc) {
 		"width='%d' height='%d'>", width, height)
 	for i := 0; i < cells; i++ {
 		for j := 0; j < cells; j++ {
-			ax, ay := corner(i+1, j, f)
-			bx, by := corner(i, j, f)
-			cx, cy := corner(i, j+1, f)
-			dx, dy := corner(i+1, j+1, f)
+			ax, ay := cornerSaddle(i+1, j, f)
+			bx, by := cornerSaddle(i, j, f)
+			cx, cy := cornerSaddle(i, j+1, f)
+			dx, dy := cornerSaddle(i+1, j+1, f)
 			if math.IsNaN(ax) || math.IsNaN(ay) || math.IsNaN(bx) || math.IsNaN(by) || math.IsNaN(cx) || math.IsNaN(cy) || math.IsNaN(dx) || math.IsNaN(dy) {
 				continue
 			}
@@ -568,7 +569,7 @@ func svg32(f zFunc) {
 	}
 }
 
-// Ex3.3
+// Ex3.3 - prints a SVG in color
 func svgColor() {
 	w, err := os.Create("file_33.svg")
 	if err != nil {
@@ -658,6 +659,27 @@ func color(i, j int, zmin, zmax float64) string {
 }
 
 // Ex3.4
+func svg(w io.Writer) {
+	zmin, zmax := minmax()
+	_, _ = fmt.Fprintf(w, "<svg xmlns='http://www.w3.org/2000/svg' "+
+		"style='stroke: grey; fill: white; stroke-width: 0.7' "+
+		"width='%d' height='%d'>", width, height)
+	for i := 0; i < cells; i++ {
+		for j := 0; j < cells; j++ {
+			ax, ay := corner(i+1, j)
+			bx, by := corner(i, j)
+			cx, cy := corner(i, j+1)
+			dx, dy := corner(i+1, j+1)
+			if math.IsNaN(ax) || math.IsNaN(ay) || math.IsNaN(bx) || math.IsNaN(by) || math.IsNaN(cx) || math.IsNaN(cy) || math.IsNaN(dx) || math.IsNaN(dy) {
+				continue
+			}
+			_, _ = fmt.Fprintf(w, "<polygon style='stroke: %s; fill: #222222' points='%g,%g %g,%g %g,%g %g,%g'/>\n",
+				color(i, j, zmin, zmax), ax, ay, bx, by, cx, cy, dx, dy)
+		}
+	}
+	_, _ = fmt.Fprintln(w, "</svg>")
+}
+
 
 func main() {
 
@@ -927,10 +949,8 @@ func main() {
 		└── wiki
 	*/
 
-	//
+	// Fill in path to a directory on your computer below scanFiles([]string{path})
 	fmt.Println("Ex5.14")
-	//Fill in path to a directory on your computer below
-	//scanFiles([]string{path})
 	/*
 		input: "C:\\Users\\yonis\\Desktop\\ComputerScience\\Test"
 		output:
@@ -947,13 +967,20 @@ func main() {
 	*/
 
 	fmt.Println("Ex3.1")
-	svgGreyLayout()
+	svgGreyLayout() // result in file_31.svg
 
 	fmt.Println("Ex3.2")
 	var f zFunc
 	f = saddle
-	svg32(f)
+	svg32(f) // result in file_32.svg
 
 	fmt.Println("Ex3.3")
-	svgColor()
+	svgColor() // result in file_33.svg
+
+	fmt.Println("Ex3.4")
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "image/svg+xml")
+		svg(w) // result in file_34.svg
+	})
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
