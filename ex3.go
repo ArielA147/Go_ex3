@@ -520,7 +520,7 @@ func f(x, y float64) float64 {
 
 func main() {
 
-	fmt.Println("Ex4.4")
+	fmt.Println("Ex4.3")
 	s2 := [5]int{1, 2, 3, 4, 5}
 	fmt.Println("the list before is: ", s2)
 	reverse(&s2)
